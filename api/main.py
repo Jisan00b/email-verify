@@ -4,7 +4,7 @@ from helpers import mail_checker
 app = FastAPI()
 
 
-@app.get('/email_verify/')
-def email_verify(emails: str):
+@app.get('/verify_email/')
+def verify_email(emails: str):
     result = mail_checker(emails)
     return result
