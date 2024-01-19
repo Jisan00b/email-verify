@@ -1,9 +1,10 @@
 from fastapi import FastAPI
+from helpers import mail_checker
 
 app = FastAPI()
 
 
-@app.get('/calculate/')
-def calculate(number: int):
-    result = [i * number for i in range(1, 11)]
+@app.get('/email_verify/')
+def email_verify(emails: str):
+    result = mail_checker(emails)
     return result
