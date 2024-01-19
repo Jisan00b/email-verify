@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from helpers import mail_checker
+from api.helpers import mail_checker
 
 app = FastAPI()
 

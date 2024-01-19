@@ -1,3 +1,4 @@
+import asyncio
 from typing import Dict
 from verify_email import verify_email
 
@@ -11,6 +12,7 @@ def mail_checker(mail: str) -> Dict[str, bool]:
     """
     out_data: Dict[str, bool] = {}
     mail_list = mail.split(',')
+    asyncio.set_event_loop(asyncio.new_event_loop())
     for mail_id in mail_list:
         mail_id = mail_id.strip().lower()
         if mail_id and mail_id not in out_data:
