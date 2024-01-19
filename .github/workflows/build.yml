@@ -33,6 +33,11 @@ jobs:
         username: ${{ secrets.VPS_USERNAME }}
         key: ${{ secrets.VPS_SSH_KEY }}
         script: |
+          if [ ! -d "Tools" ]; then
+            git clone https://github.com/Jisan09/Tools.git Tools
+          else
+            cd Tools
+            git pull
+          fi
           cd Tools
-          git pull
           docker-compose up --build -d
