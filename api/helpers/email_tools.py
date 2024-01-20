@@ -11,7 +11,7 @@ def mail_checker(mail: str) -> Dict[str, bool]:
     :return: A dictionary where keys are email addresses, and values are boolean indicating validity.
     """
     out_data: Dict[str, bool] = {}
-    mail_list = mail.replace("'", "").split(',')
+    mail_list = mail.split(',')
     asyncio.set_event_loop(asyncio.new_event_loop())
     for mail_id in mail_list:
         mail_id = mail_id.strip().lower()
