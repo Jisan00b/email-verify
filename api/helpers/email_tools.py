@@ -1,5 +1,4 @@
 import asyncio
-import time
 from typing import Dict
 from verify_email import verify_email
 
@@ -17,6 +16,5 @@ def mail_checker(mail: str) -> Dict[str, bool]:
     for mail_id in mail_list:
         mail_id = mail_id.strip().lower()
         if mail_id and mail_id not in out_data:
-            time.sleep(2)
             out_data.update({mail_id: verify_email(mail_id, timeout=10)})
     return out_data
