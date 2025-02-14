@@ -16,5 +16,5 @@ def mail_checker(mail: str) -> Dict[str, bool]:
     for mail_id in mail_list:
         mail_id = mail_id.strip().lower()
         if mail_id and mail_id not in out_data:
-            out_data.update({mail_id: verify_email(mail_id, timeout=4)})
+            out_data.update({mail_id: verify_email(mail_id, timeout=15)})
     return out_data
